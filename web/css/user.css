@@ -1,0 +1,279 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    background-color: #111;
+    overflow-x: hidden;
+
+}
+
+/* width */
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+    background: rgb(145, 16, 16);
+    border-radius: 10px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    width: 100vw;
+    height: 100px;
+    position: relative;
+    align-items: center;
+    display: flex;
+    inset: 0;
+    background-color: rgb(145, 16, 16);
+}
+
+nav h1 {
+    margin-left: 50px;
+    color: #fff;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2em;
+    filter: drop-shadow(0 0 10px black);
+    cursor: pointer;
+}
+
+nav button {
+    margin-left: 75px;
+    width: auto;
+    background-color: inherit;
+    border: none;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: 'Noto Sans', sans-serif;
+    transition: 0.25s;
+}
+
+nav img {
+    display: none;
+}
+
+nav button:hover {
+    transform: scale(1.2);
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    position: absolute;
+    width: 75vw;
+    left: 12.5vw;
+    top: 15vh;
+    border-radius: 20px;
+    height: 75vh;
+    right: 12.5vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    filter: drop-shadow(0 0 10px black);
+}
+
+header form,
+header .form {
+    top: 15%;
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto;
+}
+
+header input,
+header button {
+    width: 50%;
+    margin-left: 25%;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    border: rgb(255, 255, 255) 1px solid;
+    background-color: #111;
+    font-family: 'Noto Sans', sans-serif;
+    color: #fff;
+    transition: 0.25s;
+    font-size: 1em;
+}
+
+header input[type=submit],
+header button {
+    width: 40%;
+    margin-left: 30%;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+header input:hover {
+    filter: brightness(2);
+
+}
+
+header input[type=submit]:hover,
+header button:hover {
+    transform: scale(1.1);
+    filter: brightness(2);
+}
+
+header p {
+    color: #fff;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1em;
+    position: relative;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+}
+
+#activeBtn {
+    text-shadow: 0 0 10px rgb(255, 255, 255);
+    transform: scale(1.2);
+}
+
+@media only screen and (max-width: 1400px) {
+    .movie_overlay_wide .options {
+        left: 75px;
+    }
+
+    .movie_overlay_wide .poster {
+        margin-left: 100px;
+        height: 250px;
+        width: 250px;
+    }
+
+    .movie_overlay_wide .text {
+        height: 250px;
+    }
+
+    .watchNow {
+        top: 375px;
+        left: 100px;
+    }
+
+    .watchLater {
+        top: 375px;
+        left: 250px;
+    }
+
+    .movieList .movie {
+        min-width: 225px;
+        max-width: 225px;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .movie_overlay_wide {
+        display: block !important;
+    }
+
+    .poster {
+        position: relative;
+        top: 25px;
+        left: -75px;
+        z-index: 100;
+    }
+
+    .text {
+        position: relative;
+        top: -225px;
+        left: 275px;
+    }
+
+    .watchNow {
+        top: 300px;
+        left: 25px;
+    }
+
+    .watchLater {
+        top: 300px;
+        left: 175px;
+    }
+
+    .options {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .text {
+        overflow-y: scroll;
+        min-width: 350px;
+    }
+
+    .movie_overlay_wide .poster {
+        min-width: 250px;
+
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    nav h1 {
+        display: none;
+    }
+
+
+}
+
+
+@media only screen and (max-width: 840px) {
+    nav button {
+        margin-left: 60px;
+    }
+
+}
+
+@media only screen and (max-width: 750px) {
+    nav button {
+        margin-left: 40px;
+    }
+
+}
+
+@media only screen and (max-width: 725px) {
+    .text {
+        display: none;
+    }
+
+    .watchNow {
+        top: 90px;
+        left: 300px;
+    }
+
+    .watchLater {
+        top: 167.5px;
+        left: 300px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    nav button {
+        margin-left: 20px;
+    }
+
+}
+
+@media only screen and (max-width: 510px) {
+    nav h1 {
+        display: block;
+    }
+
+    nav button {
+        display: none;
+    }
+}

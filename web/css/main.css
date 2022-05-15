@@ -1,0 +1,496 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    background-color: #111;
+    overflow-x: hidden;
+
+}
+
+/* width */
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+    background: rgb(145, 16, 16);
+    border-radius: 10px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    width: 100vw;
+    height: 100px;
+    position: relative;
+    align-items: center;
+    display: flex;
+    inset: 0;
+    background-color: rgb(145, 16, 16);
+}
+
+nav h1 {
+    margin-left: 50px;
+    color: #fff;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2em;
+    filter: drop-shadow(0 0 10px black);
+    cursor: pointer;
+}
+
+nav button {
+    margin-left: 75px;
+    width: auto;
+    background-color: inherit;
+    border: none;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: 'Noto Sans', sans-serif;
+    transition: 0.25s;
+}
+
+nav img {
+    display: none;
+}
+
+nav button:hover {
+    transform: scale(1.2);
+}
+
+header {
+    width: 100vw;
+    height: 70vh;
+    max-height: 70vh;
+    overflow: hidden;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('https://d2iltjk184xms5.cloudfront.net/uploads/photo/file/432338/large_469ade0ebca7d222f70b34a073079bbd-MoonKnight_20topp.jpg');
+}
+
+header .movie_overlay_wide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+}
+
+.movie_overlay_wide .poster {
+    width: 300px;
+    background-color: red;
+    background-image: url('https://pbs.twimg.com/media/FMv19p9VkAQmPAn?format=jpg&name=medium');
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+    background-position-y: 0px;
+    border-radius: 20px;
+    position: relative;
+    margin-left: 150px;
+}
+
+.movie_overlay_wide .text {
+    width: 400px;
+    background-color: rgba(17, 17, 17, 0.5);
+    color: #fff;
+    height: 300px;
+    border-radius: 20px;
+    font-family: 'Noto Sans', sans-serif;
+    margin-left: -30px;
+    padding-left: 50px;
+    padding-right: 30px;
+}
+
+.movie_overlay_wide .options {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    left: 150px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    align-items: center;
+    background-color: rgba(17, 17, 17, 0.5);
+    border-radius: 20px;
+    text-align: center;
+
+}
+
+.options .time,
+.options .rating {
+
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50% 50%;
+    text-align: center;
+    width: max-content;
+}
+
+.options .time h1,
+.options .rating h1,
+.options .time h2,
+.options .rating h2 {
+    color: #fff;
+    filter: drop-shadow(0, 0, 5px black);
+    width: 200px;
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.watchNow {
+    padding: 25px;
+    background-color: #111;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    position: absolute;
+    left: 150px;
+    top: 500px;
+    transition: filter 0.25s;
+    cursor: pointer;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.watchLater {
+    padding: 25px;
+    background-color: #111;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    position: absolute;
+    left: 300px;
+    transition: filter 0.25s;
+    top: 500px;
+    cursor: pointer;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.watchNow:hover,
+.watchLater:hover {
+    filter: brightness(1.5);
+}
+
+.movies {
+    width: 100vw;
+    height: fit-content;
+}
+
+.movies h1 {
+    color: white;
+    font-family: 'Noto Sans', sans-serif;
+    margin-left: 5vw;
+    margin-top: 50px;
+}
+
+.movies hr {
+    width: 100vw;
+    border: 1px solid white;
+    width: 90vw;
+    margin-left: 5vw;
+}
+
+.movieList {
+    display: flex;
+    width: 95vw;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: 300px;
+    position: relative;
+    margin-left: 2.5vw;
+    margin-top: 50px;
+    margin-right: 2.5vw;
+    transition: filter 0.25s, transform 0.5s;
+}
+
+.movieList::-webkit-scrollbar {
+    display: none;
+}
+
+.movieList .movie {
+    min-width: 200px;
+    max-width: 200px;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: blue;
+    position: relative;
+    margin-left: 50px;
+    border-radius: 20px;
+}
+
+.movie .blur {
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+}
+
+.movie .img {
+    height: 45%;
+    position: relative;
+    background-repeat: no-repeat;
+    border-radius: 20px 20px 0 0;
+    background-size: cover;
+    width: 100%;
+    overflow: hidden;
+}
+
+.movie .blur .tittle {
+    font-size: 1em;
+    margin-left: 5px;
+    margin-top: 5px;
+    text-shadow: 0 0 10px black;
+}
+
+.activeBtn {
+    text-shadow: 0 0 10px rgb(255, 255, 255);
+    transform: scale(1.2);
+}
+
+.movie .blur .watch,
+.movie .blur .later {
+    padding: 10px;
+    background-color: #111;
+    border-radius: 20px;
+    border: none;
+    color: #fff;
+    margin-top: 5px;
+    transition: filter 0.25s;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.movie .blur .watch {
+    margin-top: 25px;
+}
+
+.movie .blur .watch:hover,
+.movie .blur .later:hover {
+    filter: brightness(1.5);
+}
+
+button {
+    cursor: pointer;
+}
+
+.active {
+    filter: brightness(1.2);
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+    transform: scale(1.1);
+}
+
+.noti {
+    width: 40%;
+    position: fixed;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    top: 5vh;
+    display: none;
+    opacity: 0;
+    left: 30%;
+    text-align: center;
+    color: white;
+    border: black 1px solid;
+    transition: opacity 0.5s;
+    transition: top 0.5s ease;
+    border-radius: 20px;
+    font-size: 1.5em;
+    font-family: 'Noto Sans', sans-serif;
+    background-color: rgba(17, 17, 17, 0.90);
+}
+
+@media only screen and (max-width: 1400px) {
+    .movie_overlay_wide .options {
+        left: 75px;
+    }
+
+    .movie_overlay_wide .poster {
+        margin-left: 100px;
+        height: 250px;
+        width: 250px;
+    }
+
+    .movie_overlay_wide .text {
+        height: 250px;
+    }
+
+    .watchNow {
+        top: 375px;
+        left: 100px;
+    }
+
+    .watchLater {
+        top: 375px;
+        left: 250px;
+    }
+
+    .movieList .movie {
+        min-width: 225px;
+        max-width: 225px;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .movie_overlay_wide {
+        display: block !important;
+    }
+
+    .poster {
+        position: relative;
+        top: 25px;
+        left: -75px;
+        z-index: 100;
+    }
+
+    .text {
+        position: relative;
+        top: -225px;
+        left: 275px;
+    }
+
+    .watchNow {
+        top: 300px;
+        left: 25px;
+    }
+
+    .watchLater {
+        top: 300px;
+        left: 175px;
+    }
+
+    .options {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .text {
+        overflow-y: scroll;
+        min-width: 350px;
+    }
+
+    .movie_overlay_wide .poster {
+        min-width: 250px;
+
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    nav {
+        display: grid;
+        grid-template-columns: auto auto auto auto !important;
+        grid-template-rows: auto auto !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+
+@media only screen and (max-width: 840px) {
+    nav button {
+        margin-left: 60px;
+    }
+
+}
+
+@media only screen and (max-width: 750px) {
+    nav button {
+        margin-left: 40px;
+    }
+
+}
+
+@media only screen and (max-width: 725px) {
+    .text {
+        display: none;
+    }
+
+    .watchNow {
+        top: 90px;
+        left: 300px;
+    }
+
+    .watchLater {
+        top: 167.5px;
+        left: 300px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    nav button {
+        margin-left: 20px;
+    }
+
+}
+
+@media only screen and (max-width: 530px) {
+    nav {
+        display: grid;
+        grid-template-columns: auto auto auto !important;
+        grid-template-rows: auto auto auto !important;
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    nav {
+        display: grid;
+        grid-template-columns: auto auto auto !important;
+        grid-template-rows: auto auto auto !important;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    .movie_overlay_wide {
+        display: grid !important;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+
+    }
+
+    .poster {
+        position: unset !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .watchNow {
+        top: 350px;
+        left: 50px;
+    }
+
+    .watchLater {
+        top: 350px;
+        left: 225px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+
+    .watchNow {
+        top: 350px;
+        left: 20px;
+    }
+
+    .watchLater {
+        top: 350px;
+        left: 45%;
+    }
+}

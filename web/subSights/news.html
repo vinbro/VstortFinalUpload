@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News - V-Story</title>
+    <link rel="stylesheet" href="../css/movies.css">
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="dropdown">
+        <div class="blur1">
+            <button class="close">X</button>
+            <div class="poster"></div>
+            <div class="text">
+                <h3>
+                    <h1>MoonKnight</h1> <br> <br> <br> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Similique corporis, sapiente vero dolor eveniet quibusdam temporibus velit pariatur aut quasi.
+                </h3>
+            </div>
+            <div class="options">
+                <div class="time">
+                    <h1>Watch Time</h1>
+                    <h2>1h 30min</h2>
+                </div>
+                <div class="rating">
+                    <h1>Ratings</h1>
+                    <h2>7.6/10👍</h2>
+                </div>
+            </div>
+            <a href="./films/moonknight.html">
+                <button class="watchNow">▶ Watch Now</button>
+            </a>
+            <button class="watchLater">📑 Add to watchlist</button>
+        </div>
+    </div>
+    <nav>
+        <a href="../v-Story.html">
+            <h1>V-Story</h1>
+        </a>
+        <a href="./movies.html"><button>Movies</button></a>
+        <a href="./shows.html"><button>Shows</button></a>
+        <a href="./news.html"><button class="activeBtn">News</button></a>
+        <a href="./search.html"><button>Search</button></a>
+        <a href="./watchLater.html"><button>Watch Later</button></a>
+        <a href="./user/signUp.html"><button class="Acc">Log In / Sign Up</button></a>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1024px-Hamburger_icon.svg.png"
+            alt="">
+    </nav>
+    <header>
+        <input type="text" class="search" placeholder="Search...">
+        <select name="genera" id="genera">
+            <option value="none">Genera</option>
+            <option value="Com">Comedies</option>
+            <option value="Act">Action</option>
+            <option value="Hor">Horror</option>
+            <option value="Sci">Fantasy</option>
+        </select>
+        <select name="ratings" id="ratings">
+            <option value="0">Ratings</option>
+            <option value="9">9</option>
+            <option value="8">8</option>
+            <option value="7">7</option>
+            <option value="6">6</option>
+            <option value="5">5</option>
+            <option value="0">>5</option>
+        </select>
+        <button class="send">Search</button>
+    </header>
+    <div class="movieList">
+
+    </div>
+    <div class="noti">NOTIFICATION TEST</div>
+    <script src="../js/newSearch.js"></script>
+    <script src="../js/trustFactor.js"></script>
+</body>
+
+</html>

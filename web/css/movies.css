@@ -1,0 +1,617 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    background-color: #111;
+    overflow-x: hidden;
+
+}
+
+/* width */
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+    background: rgb(145, 16, 16);
+    border-radius: 10px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    width: 100vw;
+    height: 100px;
+    position: relative;
+    align-items: center;
+    display: flex;
+    inset: 0;
+    background-color: rgb(145, 16, 16);
+}
+
+nav h1 {
+    margin-left: 50px;
+    color: #fff;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2em;
+    filter: drop-shadow(0 0 10px black);
+    cursor: pointer;
+}
+
+.activeBtn {
+    text-shadow: 0 0 10px rgb(255, 255, 255);
+    transform: scale(1.2);
+}
+
+nav button {
+    margin-left: 75px;
+    width: auto;
+    background-color: inherit;
+    border: none;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: 'Noto Sans', sans-serif;
+    transition: 0.25s;
+}
+
+nav img {
+    display: none;
+}
+
+nav button:hover {
+    transform: scale(1.2);
+}
+
+.movieList {
+    display: grid;
+    width: 95vw;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    grid-template-columns: 14.2857142857% 14.2857142857% 14.2857142857% 14.2857142857% 14.2857142857% 14.2857142857% 14.2857142857%;
+    grid-row-gap: 50px;
+    position: relative;
+    margin-left: 2.5vw;
+    margin-top: 50px;
+    margin-right: 2.5vw;
+    transition: filter 0.25s, transform 0.5s;
+}
+
+.movieList::-webkit-scrollbar {
+    display: none;
+}
+
+.movieList .movie {
+    min-width: 200px;
+    max-width: 200px;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: blue;
+    position: relative;
+    margin-left: 50px;
+    border-radius: 20px;
+    color: #fff;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.movie .blur {
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+}
+
+.movie .img {
+    height: 45%;
+    position: relative;
+    background-repeat: no-repeat;
+    border-radius: 20px 20px 0 0;
+    background-size: cover;
+    width: 100%;
+    overflow: hidden;
+}
+
+.movie .blur .tittle {
+    font-size: 1em;
+    margin-left: 5px;
+    margin-top: 5px;
+    text-shadow: 0 0 10px black;
+}
+
+.activeBtn {
+    text-shadow: 0 0 10px rgb(255, 255, 255);
+    transform: scale(1.2);
+}
+
+.movie .blur .watch,
+.movie .blur .later {
+    padding: 10px;
+    background-color: #111;
+    border-radius: 20px;
+    border: none;
+    color: #fff;
+    margin-top: 5px;
+    transition: filter 0.25s;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.movie .blur .watch {
+    margin-top: 25px;
+}
+
+.movie .blur .watch:hover,
+.movie .blur .later:hover {
+    filter: brightness(1.5);
+}
+
+button {
+    cursor: pointer;
+}
+
+header {
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+header input {
+    margin-left: 150px;
+    width: 150px;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid #fff;
+    background-color: #111;
+    box-shadow: 0px 0px 2.5px white inset;
+    font-family: 'Noto Sans', sans-serif;
+    color: white;
+    font-size: 1em;
+    transition: 0.25s;
+}
+
+header select,
+header button {
+    color: #fff;
+    font-family: 'Noto Sans', sans-serif;
+    padding: 20px;
+    width: 150px;
+    margin-left: 50px;
+    border-radius: 20px;
+    background-color: #111;
+    border: 1px solid #fff;
+    box-shadow: 0 0 2.5px white inset;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1em;
+    transition: 0.25s;
+}
+
+header button:hover,
+header input:hover,
+header select:hover {
+    transform: scale(1.1);
+}
+
+header input::placeholder {
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+.dropdown {
+    width: 100vw;
+    height: 0vh;
+    transition: height 0.25s;
+    position: fixed;
+    inset: 0;
+    background-color: green;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 4;
+}
+
+.dropdown .blur1 {
+    display: none;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+}
+
+.dropdown .blur1 .poster {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    background-position: center;
+    align-self: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: 150px;
+    background-position-y: 0px;
+    border-radius: 20px;
+}
+
+.dropdown .blur1 .close {
+    font-size: 2em;
+    color: #fff;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #111;
+    border: none;
+    margin: 25px;
+}
+
+.dropdown .text {
+    width: 400px;
+    align-self: center;
+    background-color: rgba(17, 17, 17, 0.5);
+    color: #fff;
+    height: 300px;
+    border-radius: 20px;
+    font-family: 'Noto Sans', sans-serif;
+    margin-left: -30px;
+    padding-left: 50px;
+    padding-right: 30px;
+}
+
+.dropdown .options {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    align-self: center;
+    left: 150px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    align-items: center;
+    background-color: rgba(17, 17, 17, 0.5);
+    border-radius: 20px;
+    text-align: center;
+
+}
+
+.options .time,
+.options .rating {
+
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50% 50%;
+    text-align: center;
+    align-self: center;
+    width: max-content;
+}
+
+.options .time h1,
+.options .rating h1,
+.options .time h2,
+.options .rating h2 {
+    color: #fff;
+    filter: drop-shadow(0, 0, 5px black);
+    width: 200px;
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.watchNow {
+    padding: 25px;
+    background-color: #111;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    position: absolute;
+    left: 200px;
+    align-self: center;
+    top: 500px;
+    transition: filter 0.25s;
+    cursor: pointer;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.watchLater {
+    padding: 25px;
+    background-color: #111;
+    border: none;
+    border-radius: 20px;
+    align-self: center;
+    color: white;
+    position: absolute;
+    left: 350px;
+    transition: filter 0.25s;
+    top: 500px;
+    cursor: pointer;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.noMovies {
+    width: 100vw;
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    font-family: 'Noto Sans', sans-serif;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    display: none;
+    color: #fff;
+}
+
+.watchNow:hover,
+.watchLater:hover {
+    filter: brightness(1.5);
+}
+
+.noti {
+    width: 40%;
+    position: fixed;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    top: 5vh;
+    display: none;
+    opacity: 0;
+    left: 30%;
+    text-align: center;
+    color: white;
+    border: black 1px solid;
+    transition: opacity 0.5s;
+    transition: top 0.5s ease;
+    border-radius: 20px;
+    font-size: 1.5em;
+    font-family: 'Noto Sans', sans-serif;
+    background-color: rgba(17, 17, 17, 0.90);
+}
+
+@media only screen and (max-width: 1400px) {
+    .movieList {
+        grid-template-columns: 20% 20% 20% 20% 20%;
+    }
+
+    .dropdown .blur1 .options {
+        left: 75px;
+    }
+
+    .dropdown .blur1 .poster {
+        margin-left: 50px;
+        height: 250px;
+        width: 250px;
+    }
+
+    .dropdown .text {
+        height: 250px;
+    }
+
+    .watchNow {
+        top: 375px;
+        left: 150px;
+    }
+
+    .watchLater {
+        top: 375px;
+        left: 300px;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .movie_overlay_wide .options {
+        left: 75px;
+    }
+
+    .movie_overlay_wide .poster {
+        margin-left: 100px;
+        height: 250px;
+        width: 250px;
+    }
+
+    .movie_overlay_wide .text {
+        height: 250px;
+    }
+
+    .watchNow {
+        top: 375px;
+        left: 100px;
+    }
+
+    .watchLater {
+        top: 375px;
+        left: 250px;
+    }
+
+    .movieList .movie {
+        min-width: 225px;
+        max-width: 225px;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+
+
+    .poster {
+        position: relative;
+        top: 25px;
+        left: -75px;
+        z-index: 100;
+    }
+
+    .text {
+        position: absolute;
+        top: 152.5px;
+        left: 310px;
+    }
+
+    .watchNow {
+        top: 410px;
+        left: 75px;
+    }
+
+    .watchLater {
+        top: 410px;
+        left: 217px;
+    }
+
+    .options {
+        display: none !important;
+    }
+
+    .movieList {
+        grid-template-columns: auto auto auto auto;
+        grid-auto-flow: row;
+    }
+
+    .movie {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .text {
+        overflow-y: scroll;
+        min-width: 350px;
+    }
+
+    .movie_overlay_wide .poster {
+        min-width: 250px;
+
+    }
+
+    .movieList {
+        grid-template-columns: auto auto auto;
+        grid-auto-flow: row;
+
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    nav {
+        display: grid;
+        grid-template-columns: auto auto auto auto !important;
+        grid-template-rows: auto auto !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .movieList {
+        grid-template-columns: auto auto;
+        grid-auto-flow: row;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+    }
+
+    header input,
+    header select,
+    header button {
+        margin-left: auto;
+        margin-right: auto;
+        width: 75%;
+    }
+}
+
+
+@media only screen and (max-width: 840px) {
+    nav button {
+        margin-left: 60px;
+    }
+
+}
+
+@media only screen and (max-width: 750px) {
+    nav button {
+        margin-left: 40px;
+    }
+
+}
+
+@media only screen and (max-width: 725px) {
+    .text {
+        display: none;
+    }
+
+    .watchNow {
+        top: 180px;
+        left: 325px;
+    }
+
+    .watchLater {
+        top: 280px;
+        left: 325px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    nav button {
+        margin-left: 20px;
+    }
+
+}
+
+@media only screen and (max-width: 530px) {
+    nav {
+        display: grid;
+        grid-template-columns: auto auto auto !important;
+        grid-template-rows: auto auto auto !important;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .movieList {
+        grid-template-columns: auto;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    .movie_overlay_wide {
+        display: grid !important;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+
+    }
+
+}
+
+@media only screen and (max-width: 450px) {
+
+    .poster {
+        left: -150px;
+    }
+
+    .watchNow {
+        left: 260px;
+    }
+
+    .watchLater {
+        left: 260px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+
+    .watchNow {
+        top: 450px;
+        left: 10px;
+    }
+
+    .watchLater {
+        top: 450px;
+        left: 45%;
+    }
+}
